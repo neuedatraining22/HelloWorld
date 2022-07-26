@@ -30,7 +30,7 @@ public class Conditions {
         }
 
         if (testScore < 10 || testScore > 90) {
-            System.out.println("You are at the boundary");
+            System.out.println("You are at the boundary.");
         }
 
         if (testScore != 100) {
