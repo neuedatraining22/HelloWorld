@@ -1,11 +1,15 @@
 public class Methods {
 
+    static int myAge = 21;
+
     public static void printMyName(String name) {
         System.out.println(name);
+        System.out.println(myAge);
     }
 
     public static int addTwoNumbers(int number1, int number2) {
         int total = number1 + number2;
+        System.out.println(total);
         return total;
     }
 
