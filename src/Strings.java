@@ -30,10 +30,22 @@ public class Strings {
         System.out.println(firstName1);
         System.out.println(firstName2);
 
-        boolean theyAreTheSame = firstName1 == firstName2;
+        boolean theyAreTheSame = firstName1.equals(firstName2);
         System.out.println(theyAreTheSame);
 
 
+        String today = "Wednesday";
+
+//        String tomorrow;
+//        if (today.equals("Wednesday")) {
+//            tomorrow = "Thursday";
+//        }
+//        else {
+//            tomorrow = "I don't know";
+//        }
+
+        String tomorrow = today.equals("Wednesday") ? "Thursday" : "I don't know";
+        System.out.println(tomorrow);
 
     }
 }
