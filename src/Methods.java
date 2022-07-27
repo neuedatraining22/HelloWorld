@@ -9,10 +9,27 @@ public class Methods {
         return total;
     }
 
+    public static String getVersionNumber() {
+        return "1.0";
+    }
+
+    public static String getStatus(int age) {
+        if (age < 18) {
+            return "child";
+        }
+        else if (age >=18) {
+            return "adult";
+        }
+        return "Uknown status";
+    }
+
     public static void main(String[] args) {
        printMyName("Simon");
        printMyName("Jenny");
         System.out.println(addTwoNumbers(14,62));
+        System.out.println(getVersionNumber());
+        System.out.println(getStatus(17));
+        System.out.println(getStatus(27));
     }
 
 
