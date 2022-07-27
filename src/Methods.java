@@ -1,3 +1,5 @@
+import javax.naming.Name;
+
 public class Methods {
 
     static int myAge = 21;
@@ -34,6 +36,17 @@ public class Methods {
         System.out.println(getVersionNumber());
         System.out.println(getStatus(17));
         System.out.println(getStatus(27));
+        NameManager.doSomething();
+
+        Book book1 = new Book();
+        book1.title = "Java for Dummies";
+        book1.author = "Doug Lowe";
+        book1.numberOfPages = 27;
+
+        Book book2 = new Book();
+        book2.title = "Python in easy steps";
+        book2.author = "Mike McGrath";
+        book2.numberOfPages = 102;
     }
 
 
