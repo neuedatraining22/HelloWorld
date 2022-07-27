@@ -9,5 +9,31 @@ public class Strings {
         System.out.println("it has " + length + " characters");
         System.out.println(myName.toUpperCase());
 
+        boolean containsAT = myName.contains("zat");
+        System.out.println(containsAT);
+
+        String phrase = "Many hands make light work.";
+        System.out.println(phrase.startsWith("Many"));
+        System.out.println(phrase.startsWith("many"));
+        System.out.println(phrase.indexOf("light"));
+        System.out.println(phrase.indexOf("Light"));
+        System.out.println(phrase.indexOf("hello"));
+        System.out.println(phrase.substring(16));
+        System.out.println(phrase.substring(16, 21));
+        System.out.println(phrase.replace("light", "heavy"));
+        System.out.println(phrase);
+
+        String name1 = "Dale McGovern";
+        String name2 = "Dale Smethurst";
+        String firstName1 = name1.substring(0,4);
+        String firstName2 = name2.substring(0,4);
+        System.out.println(firstName1);
+        System.out.println(firstName2);
+
+        boolean theyAreTheSame = firstName1 == firstName2;
+        System.out.println(theyAreTheSame);
+
+
+
     }
 }
