@@ -39,14 +39,14 @@ public class Methods {
         NameManager.doSomething();
 
         Book book1 = new Book();
-        book1.title = "Java for Dummies";
-        book1.author = "Doug Lowe";
-        book1.numberOfPages = 27;
+        book1.setTitle("Java for Dummies");
+        book1.setAuthor("Doug Lowe");
+        book1.setNumberOfPages(27);
 
         Book book2 = new Book();
-        book2.title = "Python in easy steps";
-        book2.author = "Mike McGrath";
-        book2.numberOfPages = 102;
+        book2.setTitle("Python in easy steps");
+        book2.setAuthor ("Mike McGrath");
+        book2.setNumberOfPages(102);
     }
 
 
