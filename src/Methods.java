@@ -47,6 +47,8 @@ public class Methods {
         book2.setTitle("Python in easy steps");
         book2.setAuthor ("Mike McGrath");
         book2.setNumberOfPages(102);
+
+        System.out.println(book2.getAuthor());
     }
 
 
