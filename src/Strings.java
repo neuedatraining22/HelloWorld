@@ -46,6 +46,11 @@ public class Strings {
 
         String tomorrow = today.equals("Wednesday") ? "Thursday" : "I don't know";
         System.out.println(tomorrow);
+        
+        String students = "Ioan,Heidi,Gloire,Duane,Mary";
+        String[] names = students.split(",");
+
+
 
     }
 }
