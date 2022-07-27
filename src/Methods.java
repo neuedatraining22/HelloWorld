@@ -36,7 +36,8 @@ public class Methods {
         System.out.println(getVersionNumber());
         System.out.println(getStatus(17));
         System.out.println(getStatus(27));
-        NameManager.doSomething();
+        NameManager nameMager = new NameManager();
+        nameMager.doSomething();
 
         Book book1 = new Book();
         book1.setTitle("Java for Dummies");
