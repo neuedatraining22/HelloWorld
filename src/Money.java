@@ -12,7 +12,7 @@ public class Money {
         double twiceThePrice = price * 2;
 
         BigDecimal zero = BigDecimal.ZERO;
-        
+
         BigDecimal total = new BigDecimal("1");
         for (int i = 0; i < 10; i++) {
             total = total.add(new BigDecimal("0.1"));
