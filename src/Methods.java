@@ -15,6 +15,16 @@ public class Methods {
         return total;
     }
 
+    public static double addTwoNumbers(double number1, double number2) {
+        return number1 + number2;
+    }
+
+    public static double addTwoNumbers(double number1) {
+        return addTwoNumbers(number1, 1.1);
+    }
+
+
+
     public static String getVersionNumber() {
         return "1.0";
     }
@@ -33,6 +43,7 @@ public class Methods {
        printMyName("Simon");
        printMyName("Jenny");
         System.out.println(addTwoNumbers(14,62));
+        System.out.println(addTwoNumbers(11.4, 19.1));
         System.out.println(getVersionNumber());
         System.out.println(getStatus(17));
         System.out.println(getStatus(27));

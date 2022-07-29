@@ -25,6 +25,13 @@ public class InsurancePolicy {
         return title + " " + firstName  + " " + surname;
     }
 
+    public String getMailingName(boolean firstInitialOnly) {
+        if (firstInitialOnly)
+            return title + " " + firstName.substring(0,1)  + " " + surname;
+        else
+            return getMailingName();
+    }
+
     public int getPolicyNumber() {
         return policyNumber;
     }
