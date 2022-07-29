@@ -24,6 +24,6 @@ public class DatesAndTimes {
 
         Instant rightNow = Instant.now();
         System.out.println(rightNow);
-        
+
     }
 }
