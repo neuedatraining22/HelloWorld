@@ -1,17 +1,22 @@
-public class InsurancePolicy {
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+public abstract class InsurancePolicy {
 
     private int policyNumber;
     private String title;
     private String firstName;
     private String surname;
     private double sumInsured;
-    private double price;
+    private BigDecimal price;
     private boolean active;
+    private LocalDate startDate;
 
     public InsurancePolicy() {
+        startDate = LocalDate.now();
     }
 
-    public InsurancePolicy(int policyNumber, String title, String firstName, String surname, double sumInsured, double price, boolean active) {
+    public InsurancePolicy(int policyNumber, String title, String firstName, String surname, double sumInsured, BigDecimal price, boolean active) {
         this.policyNumber = policyNumber;
         this.title = title;
         this.firstName = firstName;
@@ -19,6 +24,7 @@ public class InsurancePolicy {
         this.sumInsured = sumInsured;
         this.price = price;
         this.active = active;
+        startDate = LocalDate.now();
     }
 
     public String getMailingName() {
@@ -30,6 +36,10 @@ public class InsurancePolicy {
             return title + " " + firstName.substring(0,1)  + " " + surname;
         else
             return getMailingName();
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
     }
 
     public int getPolicyNumber() {
@@ -72,11 +82,11 @@ public class InsurancePolicy {
         this.sumInsured = sumInsured;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
