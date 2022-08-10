@@ -1,5 +1,6 @@
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public abstract class InsurancePolicy {
 
@@ -11,12 +12,13 @@ public abstract class InsurancePolicy {
     private BigDecimal price;
     private boolean active;
     private LocalDate startDate;
+    private PolicyType policyType;
 
     public InsurancePolicy() {
         startDate = LocalDate.now();
     }
 
-    public InsurancePolicy(int policyNumber, String title, String firstName, String surname, double sumInsured, BigDecimal price, boolean active) {
+    public InsurancePolicy(int policyNumber, String title, String firstName, String surname, double sumInsured, BigDecimal price, boolean active, PolicyType policyType) {
         this.policyNumber = policyNumber;
         this.title = title;
         this.firstName = firstName;
@@ -25,6 +27,19 @@ public abstract class InsurancePolicy {
         this.price = price;
         this.active = active;
         startDate = LocalDate.now();
+        this.policyType = policyType;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public PolicyType getPolicyType() {
+        return policyType;
+    }
+
+    public void setPolicyType(PolicyType policyType) {
+        this.policyType = policyType;
     }
 
     public String getMailingName() {
@@ -96,5 +111,34 @@ public abstract class InsurancePolicy {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+
+    @Override
+    public String toString() {
+        return "InsurancePolicy{" +
+                "policyNumber=" + policyNumber +
+                ", title='" + title + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", sumInsured=" + sumInsured +
+                ", price=" + price +
+                ", active=" + active +
+                ", startDate=" + startDate +
+                ", policyType=" + policyType +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        InsurancePolicy that = (InsurancePolicy) o;
+        return policyNumber == that.policyNumber && Double.compare(that.sumInsured, sumInsured) == 0 && active == that.active && Objects.equals(title, that.title) && Objects.equals(firstName, that.firstName) && Objects.equals(surname, that.surname) && Objects.equals(price, that.price) && Objects.equals(startDate, that.startDate) && policyType == that.policyType;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(policyNumber, title, firstName, surname, sumInsured, price, active, startDate, policyType);
     }
 }
