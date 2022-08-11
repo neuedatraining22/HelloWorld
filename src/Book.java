@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Book implements Comparable<Book>{
 
     private String title;
@@ -40,15 +42,30 @@ public class Book implements Comparable<Book>{
 
     @Override
     public int compareTo(Book o) {
-        return title.compareTo(o.getTitle());
+       // return title.compareTo(o.getTitle());
+        return - Integer.compare(numberOfPages, o.getNumberOfPages());
     }
 
     @Override
     public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
+
+        return "Book\r\n  \" " +
+                "title='" + title + '\'' + System.lineSeparator() +
                 ", author='" + author + '\'' +
                 ", numberOfPages=" + numberOfPages +
-                '}';
+                '\"';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return numberOfPages == book.numberOfPages && Objects.equals(title, book.title) && Objects.equals(author, book.author);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, numberOfPages);
     }
 }

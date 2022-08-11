@@ -23,5 +23,7 @@ public class SortingLists {
 
         Collections.sort(books);
         System.out.println(books);
+
+        System.out.println(books.get(0));
     }
 }
